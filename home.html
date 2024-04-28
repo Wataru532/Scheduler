@@ -201,20 +201,19 @@
                 document.getElementById("d_Fri").className = "today";
             }
         }
-        function selection_adj(){
+
+        function view_data(){ //データの表示
+            var jsonData;
+            var classData;
             var selectionData;
             //選択科目のデータを取得するプログラムを記述
             //以下は仮のデータ
             selectionData = {
                 "class":"12", //12 as 2年理探
                 "subjects":{"芸":"音楽", "理物生":"物理", "日地":"地理"}
-            }
-        }
-        
-        function view_data(){ //データの表示
+            };
+
             //json data
-            var jsonData;
-            var classData;
             fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
             .then(function(response) {
               if (!response.ok) {
@@ -247,7 +246,6 @@
         showd_Fri();
         month_Now();
         emphasize();
-        selection_adj();
         view_data();
         
     </script>
