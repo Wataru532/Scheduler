@@ -201,6 +201,15 @@
                 document.getElementById("d_Fri").className = "today";
             }
         }
+        function selection_adj(){
+            var selectionData;
+            //選択科目のデータを取得するプログラムを記述
+            //以下は仮のデータ
+            selectionData = {
+                "class":"12", //12 as 2年理探
+                "subjects":{"芸":"音楽", "理物生":"物理", "日地":"地理"}
+            }
+        }
         
         function view_data(){ //データの表示
             //json data
@@ -216,41 +225,13 @@
             .then(function(data) {
               jsonData = data;
               console.log(jsonData);
-              classData = jsonData[12]["null"]; //一旦2年理探
+              classData = jsonData[selectionData["class"]]["null"]; 
               console.log(classData);
 
               //set data
-              document.getElementById("0").innerHTML = classData[0];
-              document.getElementById("1").innerHTML = classData[1];
-              document.getElementById("2").innerHTML = classData[2];
-              document.getElementById("3").innerHTML = classData[3];
-              document.getElementById("4").innerHTML = classData[4];
-              document.getElementById("5").innerHTML = classData[5];
-              document.getElementById("6").innerHTML = classData[6];
-              document.getElementById("7").innerHTML = classData[7];
-              document.getElementById("8").innerHTML = classData[8];
-              document.getElementById("9").innerHTML = classData[9];
-              document.getElementById("10").innerHTML = classData[10];
-              document.getElementById("11").innerHTML = classData[11];
-              document.getElementById("12").innerHTML = classData[12];
-              document.getElementById("13").innerHTML = classData[13];
-              document.getElementById("14").innerHTML = classData[14];
-              document.getElementById("15").innerHTML = classData[15];
-              document.getElementById("16").innerHTML = classData[16];
-              document.getElementById("17").innerHTML = classData[17];
-              document.getElementById("18").innerHTML = classData[18];
-              document.getElementById("19").innerHTML = classData[19];
-              document.getElementById("20").innerHTML = classData[20];
-              document.getElementById("21").innerHTML = classData[21];
-              document.getElementById("22").innerHTML = classData[22];
-              document.getElementById("23").innerHTML = classData[23];
-              document.getElementById("24").innerHTML = classData[24];
-              document.getElementById("25").innerHTML = classData[25];
-              document.getElementById("26").innerHTML = classData[26];
-              document.getElementById("27").innerHTML = classData[27];
-              document.getElementById("28").innerHTML = classData[28];
-              document.getElementById("29").innerHTML = classData[29];
-                
+              for (let i = 0; i < 30; i++){
+                document.getElementById(String(i)).innerHTML = classData[i];
+              }
             })
             .catch(function(error) {
               console.error('Error fetching JSON file: ', error);
@@ -265,6 +246,7 @@
         showd_Fri();
         month_Now();
         emphasize();
+        selection_adj();
         view_data();
         
     </script>
