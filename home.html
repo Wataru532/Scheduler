@@ -51,12 +51,28 @@
         </tbody>
     </table><br>
     <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
+    <p4>RESULT : <span id="result"></span></p4>
 
     
 
 
 
     <script>
+        fetch('/data/Schedule_data.json')
+          .then(function(response) {
+            if (!response.ok) {
+              throw new Error('Failed to load JSON file: ' + response.statusText);
+            }
+            return response.json();
+          })
+          .then(function(jsonData) {
+            var resultDiv = document.getElementById('result');
+            resultDiv.textContent = JSON.stringify(jsonData, null, 2);
+          })
+          .catch(function(error) {
+            console.error('Error fetching JSON file: ', error);
+          });
+        
         //使用するグローバル変数の定義
         const now = new Date();
         const year = now.getYear();
