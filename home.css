@@ -47,6 +47,11 @@ td{
     border:1px white solid;
     padding:15px 40px;
 }
+tbody{
+    position: relative;
+    display: inline;
+    align-items: center;
+}
 
 .login_button {
   position: relative;
