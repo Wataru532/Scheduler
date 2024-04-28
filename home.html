@@ -58,21 +58,6 @@
 
 
     <script>
-        fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
-          .then(function(response) {
-            if (!response.ok) {
-              throw new Error('Failed to load JSON file: ' + response.statusText);
-            }
-            return response.json();
-          })
-          .then(function(jsonData) {
-            var resultDiv = document.getElementById('result');
-            resultDiv.textContent = JSON.stringify(jsonData, null, 2);
-          })
-          .catch(function(error) {
-            console.error('Error fetching JSON file: ', error);
-          });
-        
         //使用するグローバル変数の定義
         const now = new Date();
         const year = now.getYear();
@@ -211,6 +196,26 @@
                 
             }
         }
+
+        //jsonデータ取得
+        function get_json_data(){
+            let jsonData;
+            
+            fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
+              .then(function(response) {
+                if (!response.ok) {
+                  throw new Error('Failed to load JSON file: ' + response.statusText);
+                }
+                return response.json();
+              })
+              .then(function(data) {
+                jsonData = data;
+                console.log(jsonData);
+              })
+              .catch(function(error) {
+                console.error('Error fetching JSON file: ', error);
+              });
+        }
         
         showDay();
         showd_Mon();
@@ -220,6 +225,7 @@
         showd_Fri();
         month_Now();
         emphasize();
+        get_json_data();
         
     </script>
 </body>
