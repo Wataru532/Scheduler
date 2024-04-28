@@ -68,7 +68,6 @@
         const weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
         var a = 0;
         var b = 0;
-        var jsonData;
         
         //うるう年の処理
         if (year%4==0 && !(year%100==0 && year%400!=0)) {
@@ -86,7 +85,7 @@
           return response.json();
         })
         .then(function(data) {
-          jsonData = data;
+          var jsonData = data;
           console.log(jsonData);
         })
         .catch(function(error) {
