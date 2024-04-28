@@ -42,12 +42,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>a1</td><td>b1</td><td>c1</td><td>d1</td><td>e1</td></tr>
-            <tr><td>2</td><td>a2</td><td>b2</td><td>c2</td><td>d2</td><td>e2</td></tr>
-            <tr><td>3</td><td>a3</td><td>b3</td><td>c3</td><td>d3</td><td>e3</td></tr>
-            <tr><td>4</td><td>a4</td><td>b4</td><td>c4</td><td>d4</td><td>e4</td></tr>
-            <tr><td>5</td><td>a5</td><td>b5</td><td>c5</td><td>d5</td><td>e5</td></tr>
-            <tr><td>6</td><td>a6</td><td>b6</td><td>c6</td><td>d6</td><td>e6</td></tr>
+            <tr><td>1</td><td><span id="0"></span></td><td><span id="6"></span></td><td><span id="12"></span></td><td><span id="18"></span></td><td><span id="24"></span></td></tr>
+            <tr><td>2</td><td><span id="1"></span></td><td><span id="7"></span></td><td><span id="13"></span></td><td><span id="19"></span></td><td><span id="25"></span></td></tr>
+            <tr><td>3</td><td><span id="2"></span></td><td><span id="8"></span></td><td><span id="14"></span></td><td><span id="20"></span></td><td><span id="26"></span></td></tr>
+            <tr><td>4</td><td><span id="3"></span></td><td><span id="9"></span></td><td><span id="15"></span></td><td><span id="21"></span></td><td><span id="27"></span></td></tr>
+            <tr><td>5</td><td><span id="4"></span></td><td><span id="10"></span></td><td><span id="16"></span></td><td><span id="22"></span></td><td><span id="28"></span></td></tr>
+            <tr><td>6</td><td><span id="5"></span></td><td><span id="11"></span></td><td><span id="17"></span></td><td><span id="23"></span></td><td><span id="29"></span></td></tr>
         </tbody>
     </table><br>
     <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
@@ -199,6 +199,7 @@
         function view_data(){ //データの表示
             //json data
             var jsonData;
+            var classData;
             fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
             .then(function(response) {
               if (!response.ok) {
@@ -209,12 +210,45 @@
             .then(function(data) {
               jsonData = data;
               console.log(jsonData);
-              console.log("2nd thing");
-              console.log(jsonData[12]["null"]);
+              classData = jsonData[12]["null"]; //一旦2年理探
+              console.log(classData);
             })
             .catch(function(error) {
               console.error('Error fetching JSON file: ', error);
             });
+        }
+
+        function set_data(){
+          document.getElementById("0").className = classData[0];
+          document.getElementById("1").className = classData[1];
+          document.getElementById("2").className = classData[2];
+          document.getElementById("3").className = classData[3];
+          document.getElementById("4").className = classData[4];
+          document.getElementById("5").className = classData[5];
+          document.getElementById("6").className = classData[6];
+          document.getElementById("7").className = classData[7];
+          document.getElementById("8").className = classData[8];
+          document.getElementById("9").className = classData[9];
+          document.getElementById("10").className = classData[10];
+          document.getElementById("11").className = classData[11];
+          document.getElementById("12").className = classData[12];
+          document.getElementById("13").className = classData[13];
+          document.getElementById("14").className = classData[14];
+          document.getElementById("15").className = classData[15];
+          document.getElementById("16").className = classData[16];
+          document.getElementById("17").className = classData[17];
+          document.getElementById("18").className = classData[18];
+          document.getElementById("19").className = classData[19];
+          document.getElementById("20").className = classData[20];
+          document.getElementById("21").className = classData[21];
+          document.getElementById("22").className = classData[22];
+          document.getElementById("23").className = classData[23];
+          document.getElementById("24").className = classData[24];
+          document.getElementById("25").className = classData[25];
+          document.getElementById("26").className = classData[26];
+          document.getElementById("27").className = classData[27];
+          document.getElementById("28").className = classData[28];
+          document.getElementById("29").className = classData[29];
         }
         
         showDay();
