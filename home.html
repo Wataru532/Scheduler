@@ -209,12 +209,12 @@
             .then(function(data) {
               jsonData = data;
               console.log(jsonData);
+              console.log("2nd thing");
+              console.log(jsonData[12]["null"]);
             })
             .catch(function(error) {
               console.error('Error fetching JSON file: ', error);
             });
-            console.log("2nd thing");
-            console.log(jsonData[12]["null"]);
         }
         
         showDay();
