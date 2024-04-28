@@ -198,6 +198,7 @@
         
         function view_data(){ //データの表示
             //json data
+            var jsonData;
             fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
             .then(function(response) {
               if (!response.ok) {
@@ -206,7 +207,7 @@
               return response.json();
             })
             .then(function(data) {
-              var jsonData = data;
+              jsonData = data;
               console.log(jsonData);
             })
             .catch(function(error) {
