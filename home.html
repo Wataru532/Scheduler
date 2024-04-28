@@ -214,8 +214,11 @@
               .catch(function(error) {
                 console.error('Error fetching JSON file: ', error);
               });
-              console.log("2nd thing");
-              console.log(jsonData[12]["null"]);
+        }
+
+        function view_data(){ //データの表示
+            console.log("2nd thing");
+            console.log(jsonData[12]["null"]);
         }
         
         showDay();
