@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="./home.css">
+    <!-- 一旦保留 <script src="./home.js"></script> -->
+</head>
+<body>
+    <p1>Schedular - Home</p1>
+    <div align="right">
+        <a href="./login.html" class="login_button">Account</a>
+    </div>
+    
+
+    <div align="left">
+        <a href="./home.html" class="home">Home</a>
+        <a href="#" class="assignments">Assignments</a>
+        <a href="#" class="classes">Classes</a>
+        <a href="#" class="chats">Chats</a>
+    </div>
+    <hr>
+
+    <p2>Class 1-5</p2><br>
+    <p3>Today : <span id="text"></span></p3><br>
+
+    <table align="center" border=1>
+        <thead>
+            <tr>
+                <th>　</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th>
+            </tr>
+            <tr>
+                <th><span id="month_now"></span></th><th><span id="d_Mon"></span></th><th><span id="d_Tue"></span></th>
+                <th><span id="d_Wed"></span></th><th><span id="d_Thu"></span></th><th><span id="d_Fri"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>2</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>3</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>4</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>5</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>6</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+        </tbody>
+    </table><br>
+    <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
+
+    
+
+
+
+    <script>
+        document.getElementById("text").innerHTML = showDay();
+        document.getElementById("d_Mon").innerHTML = showd_Mon();
+        document.getElementById("d_Tue").innerHTML = showd_Tue();
+        document.getElementById("d_Wed").innerHTML = showd_Wed();
+        document.getElementById("d_Thu").innerHTML = showd_Thu();
+        document.getElementById("d_Fri").innerHTML = showd_Fri();
+        document.getElementById("month_now").innerHTML = month_now();
+  
+        function showDay() {
+            var weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+            var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var now = new Date();
+            var weekdays = now.getDay();
+            var date = now.getDate();
+            var month = now.getMonth();
+
+            return weeks[weekdays] + " " + months[month] + "/" + date + " " + now.getFullYear();
+        }
+
+        function month_now(){
+            var now = new Date();
+            var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var month = now.getMonth();
+
+            return months[month];
+        }
+
+        function showd_Mon(){
+            var now = new Date();
+            
+        }
+        showDay();
+        month_now();
+    </script>
+</body>
