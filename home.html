@@ -26,7 +26,34 @@
     <p2>Class 2-6</p2><br>
     <p3>Today : <span id="text"></span></p3><br>
 
-        <script>
+    <table align="center" border=1>
+        <thead>
+            <tr>
+                <th>　</th>
+                <th><span id="monday">Mon</span></th>
+                <th><span id="tueday">Tue</span></th>
+                <th><span id="wedday">Wed</span></th>
+                <th><span id="thuday">Thu</span></th>
+                <th><span id="friday">Fri</span></th>
+            </tr>
+            <tr>
+                <th><span id="month_now"></span></th><th><span id="d_Mon"></span></th><th><span id="d_Tue"></span></th>
+                <th><span id="d_Wed"></span></th><th><span id="d_Thu"></span></th><th><span id="d_Fri"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td><span id="0"></span></td><td><span id="6"></span></td><td><span id="12"></span></td><td><span id="18"></span></td><td><span id="24"></span></td></tr>
+            <tr><td>2</td><td><span id="1"></span></td><td><span id="7"></span></td><td><span id="13"></span></td><td><span id="19"></span></td><td><span id="25"></span></td></tr>
+            <tr><td>3</td><td><span id="2"></span></td><td><span id="8"></span></td><td><span id="14"></span></td><td><span id="20"></span></td><td><span id="26"></span></td></tr>
+            <tr><td>4</td><td><span id="3"></span></td><td><span id="9"></span></td><td><span id="15"></span></td><td><span id="21"></span></td><td><span id="27"></span></td></tr>
+            <tr><td>5</td><td><span id="4"></span></td><td><span id="10"></span></td><td><span id="16"></span></td><td><span id="22"></span></td><td><span id="28"></span></td></tr>
+            <tr><td>6</td><td><span id="5"></span></td><td><span id="11"></span></td><td><span id="17"></span></td><td><span id="23"></span></td><td><span id="29"></span></td></tr>
+        </tbody>
+    </table><br>
+    <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
+
+    
+    <script>
         //使用するグローバル変数の定義
         const now = new Date();
         const year = now.getYear();
@@ -231,37 +258,4 @@
         view_data();
         
     </script>
-
-    <table align="center" border=1>
-        <thead>
-            <tr>
-                <th>　</th>
-                <th><span id="monday">Mon</span></th>
-                <th><span id="tueday">Tue</span></th>
-                <th><span id="wedday">Wed</span></th>
-                <th><span id="thuday">Thu</span></th>
-                <th><span id="friday">Fri</span></th>
-            </tr>
-            <tr>
-                <th><span id="month_now"></span></th><th><span id="d_Mon"></span></th><th><span id="d_Tue"></span></th>
-                <th><span id="d_Wed"></span></th><th><span id="d_Thu"></span></th><th><span id="d_Fri"></span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td><span id="0"></span></td><td><span id="6"></span></td><td><span id="12"></span></td><td><span id="18"></span></td><td><span id="24"></span></td></tr>
-            <tr><td>2</td><td><span id="1"></span></td><td><span id="7"></span></td><td><span id="13"></span></td><td><span id="19"></span></td><td><span id="25"></span></td></tr>
-            <tr><td>3</td><td><span id="2"></span></td><td><span id="8"></span></td><td><span id="14"></span></td><td><span id="20"></span></td><td><span id="26"></span></td></tr>
-            <tr><td>4</td><td><span id="3"></span></td><td><span id="9"></span></td><td><span id="15"></span></td><td><span id="21"></span></td><td><span id="27"></span></td></tr>
-            <tr><td>5</td><td><span id="4"></span></td><td><span id="10"></span></td><td><span id="16"></span></td><td><span id="22"></span></td><td><span id="28"></span></td></tr>
-            <tr><td>6</td><td><span id="5"></span></td><td><span id="11"></span></td><td><span id="17"></span></td><td><span id="23"></span></td><td><span id="29"></span></td></tr>
-        </tbody>
-    </table><br>
-    <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
- 
-
-    
-
-
-
-
 </body>
