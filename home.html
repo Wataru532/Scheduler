@@ -14,9 +14,10 @@
 
     <div align="left">
         <a href="./home.html" class="home">Home</a>
-        <a href="#" class="assignments">Assignments</a>
-        <a href="#" class="classes">Classes</a>
-        <a href="#" class="chats">Chats</a>
+        <a href="./assignments.html" class="assignments">Assignments</a>
+        <a href="./classes.html" class="classes">Classes</a>
+        <a href="./notifications.html" class="notifications">Notifications</a>
+        <a href="https://mail.google.com/chat/u/0/#chat/home" class="chats" target="_blank" rel="noopener noreferrer">Chats</a>
     </div>
     <hr>
 
@@ -26,7 +27,12 @@
     <table align="center" border=1>
         <thead>
             <tr>
-                <th>　</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th>
+                <th>　</th>
+                <th><span id="monday">Mon</span></th>
+                <th><span id="tueday">Tue</span></th>
+                <th><span id="wedday">Wed</span></th>
+                <th><span id="thuday">Thu</span></th>
+                <th><span id="friday">Fri</span></th>
             </tr>
             <tr>
                 <th><span id="month_now"></span></th><th><span id="d_Mon"></span></th><th><span id="d_Tue"></span></th>
@@ -34,134 +40,168 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
-            <tr><td>2</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
-            <tr><td>3</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
-            <tr><td>4</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
-            <tr><td>5</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
-            <tr><td>6</td><td>class</td><td>class</td><td>class</td><td>class</td><td>class</td></tr>
+            <tr><td>1</td><td>a1</td><td>b1</td><td>c1</td><td>d1</td><td>e1</td></tr>
+            <tr><td>2</td><td>a2</td><td>b2</td><td>c2</td><td>d2</td><td>e2</td></tr>
+            <tr><td>3</td><td>a3</td><td>b3</td><td>c3</td><td>d3</td><td>e3</td></tr>
+            <tr><td>4</td><td>a4</td><td>b4</td><td>c4</td><td>d4</td><td>e4</td></tr>
+            <tr><td>5</td><td>a5</td><td>b5</td><td>c5</td><td>d5</td><td>e5</td></tr>
+            <tr><td>6</td><td>a6</td><td>b6</td><td>c6</td><td>d6</td><td>e6</td></tr>
         </tbody>
     </table><br>
     <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
-	<p4><span id="result"></span></p4>
 
     
 
 
 
     <script>
+        //使用するグローバル変数の定義
+        const now = new Date();
+        const year = now.getYear();
+        const month = now.getMonth();
+        const date = now.getDate();
+        const day = now.getDay();
+        const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        const weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+        var a = 0;
+        var b = 0;
+        
+        //うるう年の処理
+        if (year%4==0 && !(year%100==0 && year%400!=0)) {
+            var dates = [31,29,31,30,31,30,31,31,30,31,30,31];
+        } else{
+            var dates = [31,28,31,30,31,30,31,31,30,31,30,31];
+        }
+        
         document.getElementById("text").innerHTML = showDay();
         document.getElementById("d_Mon").innerHTML = showd_Mon();
         document.getElementById("d_Tue").innerHTML = showd_Tue();
         document.getElementById("d_Wed").innerHTML = showd_Wed();
         document.getElementById("d_Thu").innerHTML = showd_Thu();
         document.getElementById("d_Fri").innerHTML = showd_Fri();
-        document.getElementById("month_now").innerHTML = month_now();
-
-	fetch('/data/schedule_data.json')
-	.then(function(response) {
-		if (!response.ok) {
-			throw new Error('Failed to load JSON file: ' + response.statusText);
-		}
-	return response.json();
-	})
-	.then(function(jsonData) {
-		var resultDiv = document.getElementById('result');
-		resultDiv.textContent = JSON.stringify(jsonData, null, 2);
-	})
-	.catch(function(error) {
-		console.error('Error fetching JSON file: ', error);
-	});
+        document.getElementById("month_now").innerHTML = month_Now();
   
-        const now = new Date();
-	const year = now.getYear();
-	const month = now.getMonth();
-	const date = now.getDate();
-	const day = now.getDay();
-	const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-	const weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-	var a = 0;
-	var b = 0;
-	const dates = year%4===0 &&!(year%100===0 && year%400!==0)
-		? [31,29,31,30,31,30,31,31,30,31,30,31]
-		: [31,28,31,30,31,30,31,31,30,31,30,31]
-	
-	function showDay() {
-	    return (weeks[day] + " " + months[month] + "/" + date + " " + now.getFullYear());
-	}
-	
-	function showd_Mon(){
-	    if (date-day+1 > dates[month]){
-	        a = date-day+1 - dates[month];
-	    } else if (date-day+1 <= 0){
-	        a = dates[month-1] + date-day+1;
-	    }else{
-	        a = date - day + 1;
-	    }
-	    
-	    return a;
-	}
-	
-	function showd_Tue(){
-	    if (date-day+2 > dates[month]){
-	        return date-day+2-dates[month];
-	    }else if (date-day+2 <= 0){
-	        return dates[month-1] + date-day+2;
-	    } else{
-	        return date - day + 2;
-	    }
-	}
-	
-	function showd_Wed(){
-	    if (date-day+3 > dates[month]){
-	        return date-day+3-dates[month];
-	    }else if (date-day+3 <= 0){
-	        return dates[month-1] + date-day+3;
-	    } else{
-	        return date - day + 3;
-	    }
-	}
-	
-	function showd_Thu(){
-	    if (date-day+4 > dates[month]){
-	        return date-day+4-dates[month];
-	    }else if (date-day+4 <= 0){
-	        return dates[month-1] + date-day+4;
-	    } else{
-	        return date - day + 4;
-	    }
-	}
-	
-	function showd_Fri(){
-	    if (date-day+5 > dates[month]){
-	        b = date-day+5-dates[month];
-	    } else if (date-day+5 <= 0){
-	        b =  dates[month-1] + date-day+5;
-	    }else{
-	        b =  date - day + 5;
-	    }
-	    return b;
-	}
-	
-	function month_Now(){
-	    if(date < 10 && a > b){
-	        var c = months[month-1];
-	        var d = months[month];
-	    }
-	    else if(date > 10 && a > b){
-	        c = months[month];
-	        d = months[month+1];
-	    }
-	    else{
-	        c = months[month];
-	        d = "none";
-	    }
-	
-	    if (d === "none"){
-	        return c;
-	    }else{
-	        return c + " / " + d;
-	    }
-	}
+        function showDay() {
+            return weeks[day] + " " + months[month] + "/" + date + " " + now.getFullYear();
+        }
+
+        function showd_Mon(){
+            document.getElementById("d_Mon").className = "not_today";
+            if (date-day+1 > dates[month]){
+                a = date-day+1 - dates[month];
+            } else if (date-day+1 <= 0){
+                a = dates[month-1] + date-day+1;
+            }else{
+                a = date - day + 1;
+            }
+            
+            return a;
+        }
+
+        function showd_Tue(){
+            document.getElementById("d_Tue").className = "not_today";
+            if (date-day+2 > dates[month]){
+                return date-day+2-dates[month];
+            }else if (date-day+2 <= 0){
+                return dates[month-1] + date-day+2;
+            } else{
+                return date - day + 2;
+            }
+        }
+
+        function showd_Wed(){
+            document.getElementById("d_Wed").className = "not_today";
+            if (date-day+3 > dates[month]){
+                return date-day+3-dates[month];
+            }else if (date-day+3 <= 0){
+                return dates[month-1] + date-day+3;
+            } else{
+                return date - day + 3;
+            }
+        }
+
+        function showd_Thu(){
+            document.getElementById("d_Thu").className = "not_today";
+            if (date-day+4 > dates[month]){
+                return date-day+4-dates[month];
+            }else if (date-day+4 <= 0){
+                return dates[month-1] + date-day+4;
+            } else{
+                return date - day + 4;
+            }
+        }
+
+        function showd_Fri(){
+            document.getElementById("d_Fri").className = "not_today";
+            if (date-day+5 > dates[month]){
+                b = date-day+5-dates[month];
+            } else if (date-day+5 <= 0){
+                b =  dates[month-1] + date-day+5;
+            }else{
+                b =  date - day + 5;
+            }
+            return b;
+        }
+
+        function month_Now(){
+            if(date < 10 && a > b){
+                var c = months[month-1];
+                var d = months[month];
+            }
+            else if(date > 10 && a > b){
+                var c = months[month];
+                var d = months[month+1];
+            }
+            else{
+                var c = months[month];
+                var d = "none";
+            }
+
+            if (d == "none"){
+                return c;
+            }else{
+                return c + " / " + d;
+            }
+        }
+
+        function emphasize(){
+            document.getElementById("monday").className = "not_today";
+            document.getElementById("tueday").className = "not_today";
+            document.getElementById("wedday").className = "not_today";
+            document.getElementById("thuday").className = "not_today";
+            document.getElementById("friday").className = "not_today";
+            
+            if(day == 1){
+                document.getElementById("monday").className = "today";
+                document.getElementById("d_Mon").className = "today";
+                
+            } else if (day == 2){
+                document.getElementById("tueday").className = "today";
+                document.getElementById("d_Tue").className = "today";
+
+            } else if (day == 3){
+                document.getElementById("wedday").className = "today";
+                document.getElementById("d_Wed").className = "today";
+                
+            } else if (day == 4){
+                document.getElementById("thuday").className = "today";
+                document.getElementById("d_Thu").className = "today";
+                
+            } else if (day == 5){
+                document.getElementById("friday").className = "today";
+                document.getElementById("d_Fri").className = "today";
+                
+            }
+        }
+        
+        showDay();
+        showd_Mon();
+        showd_Tue();
+        showd_Wed();
+        showd_Thu();
+        showd_Fri();
+        month_Now();
+        emphasize();
+        
     </script>
 </body>

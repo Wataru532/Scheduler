@@ -3,6 +3,7 @@
 body{
     background-color: white;
     -webkit-font-smoothing: antialiased;
+    margin: 4px;
 }
 
 p1{
@@ -11,6 +12,7 @@ p1{
     font-family:"roboto","helvetica";
     font-weight: 400;
     color: #5f6368;
+    display: inline;
 }
 p2{
     margin-left: 0.625rem;
@@ -47,21 +49,24 @@ td{
 }
 
 .login_button {
-  display:inline;
   position: relative;
+  display: inline;
   align-items: right;
-  text-decoration: none;
+  justify-content: right;
   height: 30px;
   padding: 0 24px;
   overflow: hidden;
   font-size: 15px;
   color: #5f6368;
+  text-align: right;
+  overflow-wrap: anywhere;
   background: transparent;
+  text-decoration: none;
 }
 
 .login_button::after {
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -85,51 +90,205 @@ td{
 
 
 .home {
-  width: 100%;
-  max-width: 350px; /* ボタン幅 */
-  color: #5f6368; /* 文字色 */
-  padding: 1em 2em;
-  font-weight: 400;
+  position: relative;
+  display: inline;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #5f6368;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
   text-decoration: none;
-  text-align: right;
-  transition: 0.3s;
-    
+}
+
+.home::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: #5f6368;
+    transform: scaleX(0);
+    transdform-origin: right top;
+}
+
+@media (any-hover: hover) {
+  .home::after {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .home:hover::after {
+    transition: transform 0.4s cubic-bezier(0.9, 0, 0, 1);
+    transform: scaleX(1);
+    transform-origin: left top;
+  }
 }
 
 .assignments {
-  width: 100%;
-  max-width: 350px; /* ボタン幅 */
-  color: #5f6368; /* 文字色 */
-  padding: 1em 2em;
-  font-weight: 400;
-  text-decoration: none;
-  text-align: right;
-  transition: 0.3s;
-    
+  position: relative;
+  display: inline;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #5f6368;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
+  text-decoration: none;    
+}
+
+.assignments::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: #5f6368;
+    transform: scaleX(0);
+    transdform-origin: right top;
+}
+
+@media (any-hover: hover) {
+  .assignments::after {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .assignments:hover::after {
+    transition: transform 0.4s cubic-bezier(0.9, 0, 0, 1);
+    transform: scaleX(1);
+    transform-origin: left top;
+  }
 }
 
 .classes {
-  width: 100%;
-  max-width: 350px; /* ボタン幅 */
-  color: #5f6368; /* 文字色 */
-  padding: 1em 2em;
-  font-weight: 400;
-  text-decoration: none;
-  text-align: right;
-  transition: 0.3s;
+  position: relative;
+  display: inline;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #5f6368;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
+  text-decoration: none;    
     
 }
 
-.chats {
-  width: 100%;
-  max-width: 350px; /* ボタン幅 */
-  color: #5f6368; /* 文字色 */
-  padding: 1em 2em;
-  font-weight: 400;
-  text-decoration: none;
-  text-align: right;
-  transition: 0.3s;
+.classes::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: #5f6368;
+    transform: scaleX(0);
+    transdform-origin: right top;
+}
+
+@media (any-hover: hover) {
+  .classes::after {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .classes:hover::after {
+    transition: transform 0.4s cubic-bezier(0.9, 0, 0, 1);
+    transform: scaleX(1);
+    transform-origin: left top;
+  }
+}
+
+.notifications {
+  position: relative;
+  display: inline;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #5f6368;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
+  text-decoration: none;    
     
+}
+
+.notifications::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: #5f6368;
+    transform: scaleX(0);
+    transdform-origin: right top;
+}
+
+@media (any-hover: hover) {
+  .notifications::after {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .notifications:hover::after {
+    transition: transform 0.4s cubic-bezier(0.9, 0, 0, 1);
+    transform: scaleX(1);
+    transform-origin: left top;
+  }
+}
+
+.chats {
+  position: relative;
+  display: inline;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #5f6368;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
+  text-decoration: none;        
+}
+
+.chats::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: #5f6368;
+    transform: scaleX(0);
+    transdform-origin: right top;
+}
+
+@media (any-hover: hover) {
+  .chats::after {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .chats:hover::after {
+    transition: transform 0.4s cubic-bezier(0.9, 0, 0, 1);
+    transform: scaleX(1);
+    transform-origin: left top;
+  }
 }
 
 .border_btn02 {
@@ -173,3 +332,10 @@ td{
   width: 0;
 }
 
+.today {
+  color:black;
+}
+
+.not_today {
+  color:#888888;
+}
