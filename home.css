@@ -46,6 +46,7 @@ th{
 td{
     border:1px white solid;
     padding:15px 40px;
+    align-itmes: center;
 }
 
 .login_button {
