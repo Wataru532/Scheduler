@@ -73,30 +73,95 @@
         		console.error('Error fetching JSON file: ', error);
       		});
   
-        function showDay() {
-            var weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-            var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-            var now = new Date();
-            var weekdays = now.getDay();
-            var date = now.getDate();
-            var month = now.getMonth();
-
-            return weeks[weekdays] + " " + months[month] + "/" + date + " " + now.getFullYear();
-        }
-
-        function month_now(){
-            var now = new Date();
-            var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-            var month = now.getMonth();
-
-            return months[month];
-        }
-
-        function showd_Mon(){
-            var now = new Date();
-            
-        }
-        showDay();
-        month_now();
+        const now = new Date();
+	const year = now.getYear();
+	const month = now.getMonth();
+	const date = now.getDate();
+	const day = now.getDay();
+	const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+	const weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+	var a = 0;
+	var b = 0;
+	const dates = year%4===0 &&!(year%100===0 && year%400!==0)
+	? [31,29,31,30,31,30,31,31,30,31,30,31]
+	: [31,28,31,30,31,30,31,31,30,31,30,31]
+	
+	function showDay() {
+	    return (weeks[day] + " " + months[month] + "/" + date + " " + now.getFullYear());
+	}
+	
+	function showd_Mon(){
+	    if (date-day+1 > dates[month]){
+	        a = date-day+1 - dates[month];
+	    } else if (date-day+1 <= 0){
+	        a = dates[month-1] + date-day+1;
+	    }else{
+	        a = date - day + 1;
+	    }
+	    
+	    return a;
+	}
+	
+	function showd_Tue(){
+	    if (date-day+2 > dates[month]){
+	        return date-day+2-dates[month];
+	    }else if (date-day+2 <= 0){
+	        return dates[month-1] + date-day+2;
+	    } else{
+	        return date - day + 2;
+	    }
+	}
+	
+	function showd_Wed(){
+	    if (date-day+3 > dates[month]){
+	        return date-day+3-dates[month];
+	    }else if (date-day+3 <= 0){
+	        return dates[month-1] + date-day+3;
+	    } else{
+	        return date - day + 3;
+	    }
+	}
+	
+	function showd_Thu(){
+	    if (date-day+4 > dates[month]){
+	        return date-day+4-dates[month];
+	    }else if (date-day+4 <= 0){
+	        return dates[month-1] + date-day+4;
+	    } else{
+	        return date - day + 4;
+	    }
+	}
+	
+	function showd_Fri(){
+	    if (date-day+5 > dates[month]){
+	        b = date-day+5-dates[month];
+	    } else if (date-day+5 <= 0){
+	        b =  dates[month-1] + date-day+5;
+	    }else{
+	        b =  date - day + 5;
+	    }
+	    return b;
+	}
+	
+	function month_Now(){
+	    if(date < 10 && a > b){
+	        var c = months[month-1];
+	        var d = months[month];
+	    }
+	    else if(date > 10 && a > b){
+	        c = months[month];
+	        d = months[month+1];
+	    }
+	    else{
+	        c = months[month];
+	        d = "none";
+	    }
+	
+	    if (d === "none"){
+	        return c;
+	    }else{
+	        return c + " / " + d;
+	    }
+	}
     </script>
 </body>
