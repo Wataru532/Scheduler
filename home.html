@@ -76,22 +76,6 @@
             var dates = [31,28,31,30,31,30,31,31,30,31,30,31];
         }
 
-        //json data
-        fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
-        .then(function(response) {
-          if (!response.ok) {
-            throw new Error('Failed to load JSON file: ' + response.statusText);
-          }
-          return response.json();
-        })
-        .then(function(data) {
-          var jsonData = data;
-          console.log(jsonData);
-        })
-        .catch(function(error) {
-          console.error('Error fetching JSON file: ', error);
-        });
-        
         document.getElementById("text").innerHTML = showDay();
         document.getElementById("d_Mon").innerHTML = showd_Mon();
         document.getElementById("d_Tue").innerHTML = showd_Tue();
@@ -213,6 +197,21 @@
         }
         
         function view_data(){ //データの表示
+            //json data
+            fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
+            .then(function(response) {
+              if (!response.ok) {
+                throw new Error('Failed to load JSON file: ' + response.statusText);
+              }
+              return response.json();
+            })
+            .then(function(data) {
+              var jsonData = data;
+              console.log(jsonData);
+            })
+            .catch(function(error) {
+              console.error('Error fetching JSON file: ', error);
+            });
             console.log("2nd thing");
             console.log(jsonData[12]["null"]);
         }
