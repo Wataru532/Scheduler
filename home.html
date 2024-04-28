@@ -68,6 +68,7 @@
         const weeks = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
         var a = 0;
         var b = 0;
+        var jsonData;
         
         //うるう年の処理
         if (year%4==0 && !(year%100==0 && year%400!=0)) {
@@ -199,8 +200,6 @@
 
         //jsonデータ取得
         function get_json_data(){
-            var jsonData;
-            
             fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
               .then(function(response) {
                 if (!response.ok) {
