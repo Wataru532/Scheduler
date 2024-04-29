@@ -31,21 +31,21 @@ p3{
 }
 
 table{
-    border:2px white solid;
+    border:2px white;
     border-collapse: collapse;
-    background-color: whitesmoke;
+    background-color: azure;
     font-family:"roboto","helvetica";
     font-weight: 400;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 } 
 th{
-    border:1px white solid;
+    border:1px white;
     padding:1px 40px;
     font-family:"roboto","helvetica";
     font-weight: thin;
 }
 td{
-    border:1px white solid;
+    border:1px white;
     padding:15px 40px;
     text-align: center;
 }
