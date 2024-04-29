@@ -211,7 +211,7 @@
             selectionData = {
                 "class":"12", //12 as 2年理探
                 "subjects":{"芸":"音楽", "理物生":"物理", "日地":"地理"}
-            };
+            }
 
             //json data
             fetch('https://Wataru532.github.io/Scheduler/data/schedule_data.json')
@@ -228,6 +228,7 @@
               console.log(classData);
 
               for (let i = 0; i < 30; i++){
+                console.log(classData[i], classData[i] == "芸" || "理物生" || "日地" || "物生物" || "地歴β" || "世政経");
                 if (classData[i] == "芸" || "理物生" || "日地" || "物生物" || "地歴β" || "世政経"){
                     classData[i] == selectionData["subjects"][classData[i]];
                 }
