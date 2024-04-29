@@ -39,7 +39,6 @@ table{
 } 
 th{
     border:1px whitesmoke solid;
-    padding:1px 40px;
     font-family:"roboto","helvetica";
     font-weight: thin;
     border-radius: 10px 10px 10px 10px;
@@ -48,7 +47,6 @@ th{
 }
 td{
     border:1px whitesmoke solid;
-    padding:15px 40px;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
@@ -327,4 +325,8 @@ td{
 .line1 {
   color:azure;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+.headsection {
+  background-color: #e0e0e0;
+  height:auto;
 }
