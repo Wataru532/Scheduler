@@ -40,13 +40,13 @@ table{
 } 
 
 th{
-    border:2px rgba(145, 166, 172, 0.904);
+    border:2px #95bdd4;
     padding:1px 40px;
     font-family:"roboto","helvetica";
     font-weight: thin;
 }
 td{
-    border:2px rgba(145, 166, 172, 0.904);
+    border:2px #95bdd4;
     padding:15px 40px;
     text-align: center;
 }
