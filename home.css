@@ -2,7 +2,7 @@
 body{
     background-color: white;
     -webkit-font-smoothing: antialiased;
-    margin: 4px;
+    margin: 0px;
 }
 p1{
     margin-left: 0.625rem;
@@ -327,6 +327,6 @@ td{
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 .headsection {
-  background-color: #e0e0e0;
+  background-color: #f2f2f2;
   height:auto;
 }
