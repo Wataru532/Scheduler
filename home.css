@@ -38,13 +38,13 @@ table{
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 } 
 th{
-    border:1px rgba(239, 249, 252, 0.904);
+    border:1px rgba(145, 166, 172, 0.904);
     padding:1px 40px;
     font-family:"roboto","helvetica";
     font-weight: thin;
 }
 td{
-    border:1px rgba(239, 249, 252, 0.904);
+    border:1px rgba(145, 166, 172, 0.904);
     padding:15px 40px;
     text-align: center;
 }
