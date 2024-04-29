@@ -227,10 +227,15 @@
               classData = jsonData[selectionData["class"]]["null"]; 
               console.log(classData);
 
+              for (let i = 0; i < 30; i++){
+                if (classData[i] == "芸" || "理物生" || "日地" || "物生物" || "地歴β" || "世政経"){
+                    classData[i] == selectionData["subjects"][classData[i]];
+                }
+              }
+
               //set data
               for (let i = 0; i < 30; i++){
                 document.getElementById(String(i)).innerHTML = classData[i];
-                console.log(classData[i]);
               }
             })
             .catch(function(error) {
