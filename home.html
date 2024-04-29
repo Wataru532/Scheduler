@@ -215,7 +215,7 @@
             //以下は仮のデータ
             selectionData = {
                 "class":"12", //12 as 2年理探
-                "subjects":{"芸":"音楽", "理物生":"物理", "日地":"地理"}
+                "subjects":{" 芸":"音楽", " 理物生":"物理", " 日地":"地理"}
             }
 
             document.getElementById("classroomname").innerHTML = classroom_name[selectionData["class"]-2];
@@ -235,18 +235,8 @@
               console.log(classData);
 
               for (let i = 0; i < 30; i++){
-                if (classData[i] == " 芸"){
-                    classData[i] == selectionData["芸"][classData[i]];
-                }else if (classData[i] == " 物生"){
-                    classData[i] == selectionData["物生"][classData[i]];
-                }else if (classData[i] == " 理物生"){
-                    classData[i] == selectionData["理物生"][classData[i]];
-                }else if (classData[i] == " 日地"){
-                    classData[i] == selectionData["日地"][classData[i]];
-                }else if (classData[i] == " 地歴β"){
-                    classData[i] == selectionData["地歴β"][classData[i]];
-                }else if (classData[i] == " 世政経"){
-                    classData[i] == selectionData["世政経"][classData[i]];
+                if (classData[i] == " 芸" || " 物生" || " 理物生" || " 日地" || " 地歴β" || " 世政経"){
+                    classData[i] == selectionData["subjects"][classData[i]];
                 }
               }
 
