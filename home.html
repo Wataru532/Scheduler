@@ -100,6 +100,7 @@
             return weeks[day] + " " + months[month] + "/" + date + " " + now.getFullYear();
         }
 
+        //以下日付処理
         function showd_Mon(){
             document.getElementById("d_Mon").className = "not_today";
             if (date-day+1 > dates[month]){
@@ -179,6 +180,7 @@
             }
         }
 
+        //強調構文
         function emphasize(){
             document.getElementById("monday").className = "not_today";
             document.getElementById("tueday").className = "not_today";
