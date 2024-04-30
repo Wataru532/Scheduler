@@ -44,6 +44,7 @@ th{
     border-radius: 10px 10px 10px 10px;
     height: 15px;
     width: 150px;
+    background-color: whitesmoke;
 }
 td{
     border:1px whitesmoke solid;
@@ -55,6 +56,11 @@ td{
     height: 60px;
     width: 150px;
 }
+
+.tn {
+  background-color: whitesmoke;
+}
+
 .login_button {
   position: relative;
   display: inline;
