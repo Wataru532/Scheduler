@@ -44,12 +44,12 @@
         </thead>
         <tbody>
             <!-- 将来的に<a>タグでリンク飛べるようにする -->
-            <tr><td class="tn">1</td><td id="0"></td><td id="6"></td><td id="12"></td><td id="18"></td><td id="24"></td></tr>
-            <tr><td class="tn">2</td><td id="1"></td><td id="7"></td><td id="13"></td><td id="19"></td><td id="25"></td></tr>
-            <tr><td class="tn">3</td><td id="2"></td><td id="8"></td><td id="14"></td><td id="20"></td><td id="26"></td></tr>
-            <tr><td class="tn">4</td><td id="3"></td><td id="9"></td><td id="15"></td><td id="21"></td><td id="27"></td></tr>
-            <tr><td class="tn">5</td><td id="4"></td><td id="10"></td><td id="16"></td><td id="22"></td><td id="28"></td></tr>
-            <tr><td class="tn">6</td><td id="5"></td><td id="11"></td><td id="17"></td><td id="23"></td><td id="29"></td></tr>
+            <tr><td class="tn">1</td><td class="htdata" id="0"></td><td class="htdata" id="6"></td><td class="htdata" id="12"></td><td class="htdata" id="18"></td><td class="htdata" id="24"></td></tr>
+            <tr><td class="tn">2</td><td class="htdata" id="1"></td><td class="htdata" id="7"></td><td class="htdata" id="13"></td><td class="htdata" id="19"></td><td class="htdata" id="25"></td></tr>
+            <tr><td class="tn">3</td><td class="htdata" id="2"></td><td class="htdata" id="8"></td><td class="htdata" id="14"></td><td class="htdata" id="20"></td><td class="htdata" id="26"></td></tr>
+            <tr><td class="tn">4</td><td class="htdata" id="3"></td><td class="htdata" id="9"></td><td class="htdata" id="15"></td><td class="htdata" id="21"></td><td class="htdata" id="27"></td></tr>
+            <tr><td class="tn">5</td><td class="htdata" id="4"></td><td class="htdata" id="10"></td><td class="htdata" id="16"></td><td class="htdata" id="22"></td><td class="htdata" id="28"></td></tr>
+            <tr><td class="tn">6</td><td class="htdata" id="5"></td><td class="htdata" id="11"></td><td class="htdata" id="17"></td><td class="htdata" id="23"></td><td class="htdata" id="29"></td></tr>
         </tbody>
     </table><br>
     <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a>
@@ -68,11 +68,11 @@
         var b = 0;
         const subj = {
             "芸": ["音楽","美術","書道"],
-            "日地": ["日本史","地理"],
+            "日地": ["日史","地理"],
             "物生": ["物理","生物"],
-            "理物生": ["物理","生物"],
+            "理物生": ["理物","理生"],
             "地歴β": ["地理β","歴史β"],
-            "世政経": ["世界史","政治","経済"]
+            "世政経": ["世史","政治","経済"]
 
         }
         const classroom_name = [
@@ -80,6 +80,17 @@
                             "2-1","2-2","2-3","2-4","2年理探","2年国探",
                             "1-1","1-2","1-3","1-4","1-5","1-6"
                         ]
+
+        const subj_col_class = {
+            "現国":"td_ja", "言語文":"td_ja", "論理国":"td_ja", "漢文":"td_ja", "古文":"td_ja", "古漢":"td_ja", "古典":"td_ja", //国語
+            "実数A":"td_math", "実数B":"td_math", "応数":"td_math", "理数Ⅱ":"td_math","理数E":"td_math","数Ⅱ":"td_math","数ＢC":"td_math", //数学
+            "数ⅡⅢ":"td_math","理数Ⅱ":"td_math", "理数Ⅱβ":"td_math","数ⅠⅡ":"td_math","数Ａ":"td_math", "理数Ⅰ":"td_math",
+            "CⅢ":"td_en","総英Ⅲ":"td_en","総英Ⅱ":"td_en","総英Ⅰ":"td_en","ECⅡ":"td_en","ECⅠ":"td_en", //英語
+            "EWⅡ":"td_en","EWⅠ":"td_en","論表Ⅲ":"td_en","論表Ⅱ":"td_en","論表Ⅰ":"td_en", 
+            "歴史":"td_soci","地理":"td_soci","世史":"td_soci","日史":"td_soci","政治":"td_soci","経済":"td_soci", "歴史β":"td_soci","地理β":"td_soci","公共":"td_soci", //社会
+            "物理":"td_sci", "物基":"td_sci", "理物":"td_sci", "生物":"td_sci", "生基":"td_sci", "理生":"td_sci", "化":"td_sci", "化基":"td_sci", "理化":"td_sci", //理科
+            "家":"td_homE", "情報Ⅰ":"td_info", "保":"td_pe", "体":"td_pe", "音楽":"td_art", "美術":"td_art", "書道":"td_art" //その他
+        }
         
         //うるう年の処理
         if (year%4==0 && !(year%100==0 && year%400!=0)) {
@@ -237,15 +248,16 @@
               classData = jsonData[selectionData["class"]]["null"]; 
               console.log(classData);
 
-              for (let i = 0; i < 30; i++){
-                if (classData[i] == " 芸" || classData[i] == " 物生" || classData[i] == " 理物生" || classData[i] == " 日地" || classData[i] == " 地歴β" || classData[i] == " 世政経"){
-                    classData[i] = selectionData["subjects"][classData[i]];
+              for (let i = 0; i < 30; i++){ //選択教科表示、背景色変更
+                let d = classData[i]
+                if (d == " 芸" || d == " 物生" || d == " 理物生" || d == " 日地" || d == " 地歴β" || d == " 世政経"){ //選択科目用
+                    d = selectionData["subjects"][d];
                 }
-              }
-
-              //set data
-              for (let i = 0; i < 30; i++){
-                document.getElementById(String(i)).innerHTML = classData[i];
+                document.getElementById(String(i)).innerHTML = d; //データセット
+                let targetid = document.getElementById(String(i));
+                if (targetid){                                    //背景色変更用
+                    targetid.className = subj_col_class[d];
+                }
               }
             })
             .catch(function(error) {

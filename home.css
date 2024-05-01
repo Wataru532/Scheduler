@@ -344,3 +344,13 @@ td{
   margin-top: 10px;
   margin-bottom: -10px;
 }
+
+.td_ja {background-color: #ff3e3e;}
+.td_math {background-color: #2c68ff;}
+.td_en {background-color: #ffe837;}
+.td_sci {background-color: #4e963d;}
+.td_soci {background-color: #ff9a47;}
+.td_homE {background-color: #9863be;}
+.td_info {background-color: #63b6b7;}
+.td_pe {background-color: #ffd6aa;}
+.td_art {background-color: #ffadf4;}
