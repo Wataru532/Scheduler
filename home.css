@@ -345,12 +345,12 @@ td{
   margin-bottom: -10px;
 }
 
-.td_ja {background-color: #ff3e3e;}
-.td_math {background-color: #2c68ff;}
-.td_en {background-color: #ffe837;}
-.td_sci {background-color: #4e963d;}
-.td_soci {background-color: #ff9a47;}
-.td_homE {background-color: #9863be;}
-.td_info {background-color: #63b6b7;}
-.td_pe {background-color: #ffd6aa;}
-.td_art {background-color: #ffadf4;}
+.td_ja {background-color: #ff3e3e9c;}
+.td_math {background-color: #2c68ff9c;}
+.td_en {background-color: #ffe8379c;}
+.td_sci {background-color: #4e963d9c;}
+.td_soci {background-color: #ff9a479c;}
+.td_homE {background-color: #9863be9c;}
+.td_info {background-color: #63b6b79c;}
+.td_pe {background-color: #ffd6aa9c;}
+.td_art {background-color: #ffadf49c;}
