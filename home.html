@@ -251,8 +251,9 @@
               for (let i = 0; i < 30; i++){ //選択教科表示、背景色変更
                 let d = classData[i]
                 if (d == " 芸" || d == " 物生" || d == " 理物生" || d == " 日地" || d == " 地歴β" || d == " 世政経"){ //選択科目用
-                    d = selectionData["subjects"][d];
+                    classData[i] = selectionData["subjects"][d];
                 }
+                d = classData[i] //更新しなきゃいけないの忘れてた
                 document.getElementById(String(i)).innerHTML = d; //データセット
                 let targetid = document.getElementById(String(i));
                 if (targetid){                                    //背景色変更用
