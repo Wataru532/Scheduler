@@ -67,12 +67,12 @@
         var a = 0;
         var b = 0;
         const subj = {
-            "芸": ["音楽","美術","書道"],
-            "日地": ["日史","地理"],
-            "物生": ["物理","生物"],
-            "理物生": ["理物","理生"],
-            "地歴β": ["地理β","歴史β"],
-            "世政経": ["世史","政治","経済"]
+            " 芸": [" 音楽"," 美術"," 書道"],
+            " 日地": [" 日史"," 地理"],
+            " 物生": [" 物理"," 生物"],
+            " 理物生": [" 理物"," 理生"],
+            " 地歴β": [" 地理β"," 歴史β"],
+            " 世政経": [" 世史"," 政治"," 経済"]
 
         }
         const classroom_name = [
@@ -82,14 +82,14 @@
                         ]
 
         const subj_col_class = {
-            "現国":"td_ja", "言語文":"td_ja", "論理国":"td_ja", "漢文":"td_ja", "古文":"td_ja", "古漢":"td_ja", "古典":"td_ja", //国語
-            "実数A":"td_math", "実数B":"td_math", "応数":"td_math", "理数Ⅱ":"td_math","理数E":"td_math","数Ⅱ":"td_math","数ＢC":"td_math", //数学
-            "数ⅡⅢ":"td_math","理数Ⅱ":"td_math", "理数Ⅱβ":"td_math","数ⅠⅡ":"td_math","数Ａ":"td_math", "理数Ⅰ":"td_math",
-            "CⅢ":"td_en","総英Ⅲ":"td_en","総英Ⅱ":"td_en","総英Ⅰ":"td_en","ECⅡ":"td_en","ECⅠ":"td_en", //英語
-            "EWⅡ":"td_en","EWⅠ":"td_en","論表Ⅲ":"td_en","論表Ⅱ":"td_en","論表Ⅰ":"td_en", 
-            "歴史":"td_soci","地理":"td_soci","世史":"td_soci","日史":"td_soci","政治":"td_soci","経済":"td_soci", "歴史β":"td_soci","地理β":"td_soci","公共":"td_soci", //社会
-            "物理":"td_sci", "物基":"td_sci", "理物":"td_sci", "生物":"td_sci", "生基":"td_sci", "理生":"td_sci", "化":"td_sci", "化基":"td_sci", "理化":"td_sci", //理科
-            "家":"td_homE", "情報Ⅰ":"td_info", "保":"td_pe", "体":"td_pe", "音楽":"td_art", "美術":"td_art", "書道":"td_art" //その他
+            " 現国":"td_ja", " 言語文":"td_ja", " 論理国":"td_ja", " 漢文":"td_ja", " 古文":"td_ja", " 古漢":"td_ja", " 古典":"td_ja", //国語
+            " 実数A":"td_math", " 実数B":"td_math", " 応数":"td_math", " 理数Ⅱ":"td_math"," 理数E":"td_math"," 数Ⅱ":"td_math"," 数ＢC":"td_math", //数学
+            " 数ⅡⅢ":"td_math"," 理数Ⅱ":"td_math", " 理数Ⅱβ":"td_math"," 数ⅠⅡ":"td_math"," 数Ａ":"td_math", " 理数Ⅰ":"td_math",
+            " CⅢ":"td_en"," 総英Ⅲ":"td_en"," 総英Ⅱ":"td_en"," 総英Ⅰ":"td_en"," ECⅡ":"td_en"," ECⅠ":"td_en", //英語
+            " EWⅡ":"td_en"," EWⅠ":"td_en"," 論表Ⅲ":"td_en"," 論表Ⅱ":"td_en"," 論表Ⅰ":"td_en", 
+            " 歴史":"td_soci"," 地理":"td_soci"," 世史":"td_soci"," 日史":"td_soci"," 政治":"td_soci"," 経済":"td_soci", " 歴史β":"td_soci"," 地理β":"td_soci"," 公共":"td_soci", //社会
+            " 物理":"td_sci", " 物基":"td_sci", " 理物":"td_sci", " 生物":"td_sci", " 生基":"td_sci", " 理生":"td_sci", " 化":"td_sci", " 化基":"td_sci", " 理化":"td_sci", //理科
+            " 家":"td_homE", " 情報Ⅰ":"td_info", " 保":"td_pe", " 体":"td_pe", " 音楽":"td_art", " 美術":"td_art", " 書道":"td_art" //その他
         }
         
         //うるう年の処理
@@ -229,7 +229,7 @@
             //以下は仮のデータ
             selectionData = {
                 "class":"12", //12 as 2年理探
-                "subjects":{" 芸":"音楽", " 理物生":"物理", " 日地":"地理"}
+                "subjects":{" 芸":" 音楽", " 理物生":" 物理", " 日地":" 地理"}
             }
 
             document.getElementById("classroomname").innerHTML = classroom_name[selectionData["class"]-2];
