@@ -267,16 +267,10 @@
               console.error('Error fetching JSON file: ', error);
             });
         }
-        function getWindowSize() {
-            var sW,sH,s;
-            sW = window.innerWidth;
-            sH = window.innerHeight;
-            console.log(sW + " x " + sH);
-        }
-        getWindowSize();
-
+    
         window.onresize = function () {
             var windowSize = window.innerWidth;
+            alert(window.innerHeight, window.innerWidth);
 
             if (windowSize < 376) {
                 console.log('Small!');
