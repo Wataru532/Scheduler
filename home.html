@@ -94,6 +94,11 @@
             " 家":"td_homE", " 情報Ⅰ":"td_info", " 保":"td_pe", " 体":"td_pe", " 音楽":"td_art", " 美術":"td_art", " 書道":"td_art", " ":"td_none"//その他
         }
         
+        //ウィンドウサイズの処理
+        var wratio;
+        if (window.innerHeight / window.innerWidth >= 1.2) {wratio = 1}
+        else {wratio = 0}
+        
         //うるう年の処理
         if (year%4==0 && !(year%100==0 && year%400!=0)) {
             var dates = [31,29,31,30,31,30,31,31,30,31,30,31];
@@ -266,20 +271,12 @@
             .catch(function(error) {
               console.error('Error fetching JSON file: ', error);
             });
-        }
-    
-        window.onresize = function () {
-            var windowSize = window.innerWidth;
-
-            if (windowSize < 376) {
-                console.log('Small!');
-            } else if (windowSize < 768) {
-                console.log('Medium!');
-            } else {
-                console.log('Large!');
-            }
         };
-        alert(window.innerHeight / window.innerWidth);
+    
+        window.onresize = function () { //ウィンドウサイズ更新検知
+            if (window.innerHeight / window.innerWidth >= 1.2) {wratio = 1}
+            else {wratio = 0}
+        };
 
         showDay();
         showd_Mon();
