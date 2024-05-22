@@ -267,6 +267,13 @@
               console.error('Error fetching JSON file: ', error);
             });
         }
+        function getWindowSize() {
+            var sW,sH,s;
+            sW = window.innerWidth;
+            sH = window.innerHeight;
+            console.log(sW + " x " + sH);
+        }
+        getWindowSize();
         
         showDay();
         showd_Mon();
