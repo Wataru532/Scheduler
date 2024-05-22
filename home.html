@@ -274,7 +274,19 @@
             console.log(sW + " x " + sH);
         }
         getWindowSize();
-        
+
+        window.onresize = function () {
+            var windowSize = window.innerWidth;
+
+            if (windowSize < 376) {
+                console.log('Small!');
+            } else if (windowSize < 768) {
+                console.log('Medium!');
+            } else {
+                console.log('Large!');
+            }
+        };
+
         showDay();
         showd_Mon();
         showd_Tue();
