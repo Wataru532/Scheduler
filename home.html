@@ -52,7 +52,7 @@
             <tr><td class="tn">6</td><td class="htdata" id="5"></td><td class="htdata" id="11"></td><td class="htdata" id="17"></td><td class="htdata" id="23"></td><td class="htdata" id="29"></td></tr>
         </tbody>
     </table><br>
-        <div align="right"><button class="circle-button">?</button></div>
+        <div align="left"><button class="circle-button">?</button></div>
         <div class="menu" id="menu">
             <ul>
                 <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener noreferrer"><li>フィードバックを送信</li></a>
@@ -78,7 +78,7 @@
                 // メニューの表示位置を設定
                 const rect = button.getBoundingClientRect();
                 menu.style.top = `${rect.bottom + window.scrollY}px`;
-                menu.style.left = `${rect.left + window.scrollX}px`;
+                menu.style.right = `${rect.right + window.scrollX}px`;
                 
                 // メニューの表示をトグル
                 if (menu.style.display === "block") {

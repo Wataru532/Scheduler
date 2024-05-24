@@ -374,6 +374,7 @@ td{
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 影 */
   transition: background-color 0.3s, border-color 0.3s; /* ホバー時のトランジション */
+  margin-left: 10px;
 }
 
 .circle-button:hover {
