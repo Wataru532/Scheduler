@@ -43,14 +43,43 @@
         <style>
             h2 {
                 font-family: "Google Sans", "Roboto", Helvetica;
-                font-weight: 400;
+                font-weight: 500;
                 margin-left: 10px;
             }
             p {
                 font-family: "Google Sans", "Roboto", Helvetica;
-                font-weight: 100;
+                font-weight: 300;
                 margin-left: 30px;
+                margin-top: -20px;
             }
         </style>
+        <script>
+            //ヘルプボタン
+            document.addEventListener("DOMContentLoaded", function() {
+                const button = document.querySelector(".circle-button");
+                const menu = document.getElementById("menu");
+
+                button.addEventListener("click", function(event) {
+                    // メニューの表示位置を設定
+                    const rect = button.getBoundingClientRect();
+                    menu.style.top = `${rect.bottom + window.scrollY}px`;
+                    menu.style.left = `${rect.left + window.scrollX}px`;
+                    
+                    // メニューの表示をトグル
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // メニューの外側をクリックしたときにメニューを非表示にする
+                document.addEventListener("click", function(event) {
+                    if (!button.contains(event.target) && !menu.contains(event.target)) {
+                        menu.style.display = "none";
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
