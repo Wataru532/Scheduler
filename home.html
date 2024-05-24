@@ -77,7 +77,7 @@
             button.addEventListener("click", function(event) {
                 // メニューの表示位置を設定
                 const rect = button.getBoundingClientRect();
-                menu.style.top = `${rect.top + window.scrollY}px`;
+                menu.style.top = `${rect.bottom + window.scrollY}px`;
                 menu.style.left = `${rect.left + window.scrollX}px`;
                 
                 // メニューの表示をトグル
