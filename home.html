@@ -78,7 +78,7 @@
                 // メニューの表示位置を設定
                 const rect = button.getBoundingClientRect();
                 menu.style.top = `${rect.bottom + window.scrollY}px`;
-                menu.style.left = `${rect.right + window.scrollX}px`;
+                menu.style.left = `${rect.left + window.scrollX}px`;
                 
                 // メニューの表示をトグル
                 if (menu.style.display === "block") {
