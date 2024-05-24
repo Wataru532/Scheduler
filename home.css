@@ -361,15 +361,15 @@ td{
 }
 
 .circle-button {
-  width: 60px; /* ボタンの幅 */
-  height: 60px; /* ボタンの高さ */
+  width: 25px; /* ボタンの幅 */
+  height: 25px; /* ボタンの高さ */
   background-color: #fff; /* ボタンの背景色 */
   border: 2px solid #ddd; /* ボタンの境界線 */
   border-radius: 50%; /* 円形にするために50%のボーダー半径 */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px; /* テキストのサイズ */
+  font-size: 18px; /* テキストのサイズ */
   color: #888; /* テキストの色 */
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 影 */
