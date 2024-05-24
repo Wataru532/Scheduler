@@ -53,11 +53,48 @@
         </tbody>
     </table><br>
     <footer>
-        <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" class="border_btn02" target="_blank" rel="noopener noreferrer">Feedback</a><br>
+        <button class="circle-button">?</button>
+        <div class="menu" id="menu">
+            <ul>
+                <a href="https://forms.gle/9ExuRPUDyRMcMxxp8" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener noreferrer"><li>フィードバックを送信</li></a>
+                <li>使い方</li>
+                <a href="https://wataru532.github.io/Scheduler" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener noreferrer"><li>About Scheduler</li></a>
+                <a href="https://wataru532.github.io/Scheduler/updatelog.html" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener noreferrer">
+                    <li>Update Log</li>
+                </a>
+            </ul>
+        </div>
         <div align="right">v0.0.1</div>
     </footer>
     
     <script>
+        //ヘルプボタン
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.querySelector(".circle-button");
+            const menu = document.getElementById("menu");
+
+            button.addEventListener("click", function(event) {
+                // メニューの表示位置を設定
+                const rect = button.getBoundingClientRect();
+                menu.style.bottom = `${rect.top + window.scrollY}px`;
+                menu.style.right = `${rect.right + window.scrollX}px`;
+                
+                // メニューの表示をトグル
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            });
+
+            // メニューの外側をクリックしたときにメニューを非表示にする
+            document.addEventListener("click", function(event) {
+                if (!button.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = "none";
+                }
+            });
+        });
+        
         //使用するグローバル変数の定義
         const now = new Date();
         const year = now.getYear();
